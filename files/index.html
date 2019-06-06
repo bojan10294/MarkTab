@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg px-lg-5 fixed-top">
+        <a href="#" class="navbar-brand ml-4 mr-0 py-0 "><img src="../img/marktab_white.png" alt="" class="logo"><img
+                src="../img/marktab.png" class="logo-black" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="nav_bar__btn">
+                <div class="bar bar1"></div>
+                <div class="bar bar2"></div>
+                <div class="bar bar3"></div>
+            </div>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a href="#" class="nav-link mr-lg-4 d-inline-block">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link mr-lg-4 d-inline-block">About</a></li>
+                <li class="nav-item"><a href="#" class="nav-link mr-lg-4 d-inline-block">Jobs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link mr-lg-4 d-inline-block">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="jumbotron rounded-0 mb-0">
+        <h1 data-aos="fade-up">Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
+        <p data-aos="fade-right" data-aos-delay="400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam
+            possimus, repudiandae ea
+            rerum, aliquam
+            doloribus autem deserunt quisquam et aut assumenda sunt iure commodi dicta dolorum ullam eius minus beatae!
+        </p>
+        <a href="#explore" data-aos="fade-left" data-aos-delay="1000">Explore!</a>
+    </div>
+    <div style="height: 70rem; background-color: black" id="explore"></div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        $('.logo-black').hide()
+        $(window).scroll(function () {
+            if ($(document).scrollTop() > 50) {
+                $('nav').addClass('white-bg')
+                $('.logo').hide()
+                $('.logo-black').show()
+                $('a.nav-link').css('color', 'black')
+                $('a.nav-link').addClass('black-underline')
+                $('.bar').addClass('black-bar')
+            }
+            if ($(document).scrollTop() < 50) {
+                $('nav').removeClass('white-bg')
+                $('.logo-black').hide();
+                $('.logo').show()
+                $('a.nav-link').css('color', 'white')
+                $('a.nav-link').removeClass('black-underline')
+                $('.bar').removeClass('black-bar')
+            }
+        })
+
+        $('.navbar-toggler').click(function () {
+            $('.bar').toggleClass('change')
+        })
+
+        AOS.init({
+            duration: 1000,
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+}
+
+nav {
+  background-color: transparent;
+  transition: 500ms ease;
+}
+nav.white-bg {
+  background-color: white;
+}
+nav img {
+  height: 3rem;
+  padding: 0;
+  margin: 0;
+}
+nav ul li {
+  text-align: center;
+}
+nav ul li a {
+  font-size: 0.9rem;
+  width: 5rem;
+  text-align: center;
+  font-weight: 600;
+  position: relative;
+  color: white;
+}
+nav ul li a:hover {
+  color: white;
+}
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transform: scale(0);
+  transition: transform 300ms ease-in-out;
+  transform-origin: right;
+}
+nav ul li a:hover::after {
+  transform: scale(1);
+  transform-origin: left;
+}
+nav ul li a.black-underline::after {
+  background-color: black;
+}
+nav button:focus {
+  outline: none !important;
+  box-shadow: none;
+}
+nav button:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.jumbotron {
+  height: 100vh;
+  background: url("../img/bg.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: bottom;
+  background-color: #aaa;
+  background-blend-mode: multiply;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+@media only screen and (min-width: 992px) {
+  .jumbotron {
+    padding-left: 15rem;
+  }
+}
+.jumbotron h1 {
+  margin-top: 15rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+@media only screen and (min-width: 992px) {
+  .jumbotron h1 {
+    width: 50%;
+  }
+}
+.jumbotron p {
+  margin-bottom: 5rem;
+  font-weight: 500;
+}
+@media only screen and (min-width: 992px) {
+  .jumbotron p {
+    width: 40%;
+  }
+}
+.jumbotron a {
+  color: white;
+  font-weight: 500;
+  border: 2px solid white;
+  padding: 0.7rem 3rem;
+  position: relative;
+  z-index: 1;
+  transition: color 50ms ease-in 100ms !important;
+}
+.jumbotron a:hover {
+  text-decoration: none;
+  color: #000;
+}
+.jumbotron a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 101%;
+  background: white;
+  z-index: -1;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 200ms ease-in;
+}
+.jumbotron a:hover::after {
+  transform: scaleY(1);
+  transform-origin: top;
+}
+
+.bar {
+  background-color: white;
+}
+.bar.black-bar {
+  background-color: black;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 30px;
+  height: 4px;
+  border-radius: 3px;
+  margin: 0.4rem;
+  transition: all 0.5s ease;
+}
+
+.bar1.change {
+  transform: rotate(-45deg) translate(-4px, 10px);
+}
+
+.bar2.change {
+  opacity: 0;
+}
+
+.bar3.change {
+  transform: rotate(45deg) translate(-4px, -10px);
+}
+
+/*# sourceMappingURL=style.css.map */
