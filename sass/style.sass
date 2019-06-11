@@ -28,12 +28,12 @@
     @media only screen and (min-width: 1500px) 
         @content
     
-
+$blue: #109FDA
 
 html
     scroll-behavior: smooth
 body
-    color: #fff
+    color: #000
     font-family: 'Montserrat', sans-serif
     overflow-x: hidden
 nav
@@ -75,6 +75,22 @@ nav
                     transform-origin: left
                 &.black-underline::after
                     background-color: black
+                &::before
+                    content: ''
+                    position: absolute
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: 2px
+                    background-color: white
+                    transform: scale(0)
+                    transition: transform 300ms ease-in-out
+                    transform-origin: left
+                &:hover::before
+                    transform: scale(1)
+                    transform-origin: right
+                &.black-underline::before
+                    background-color: black
     button:focus 
         outline: none !important
         box-shadow: none
@@ -93,6 +109,7 @@ nav
     background-blend-mode: multiply
     padding-left: 3rem
     padding-right: 3rem
+    color: #fff
     @include bp-lg
         padding-left: 15rem
     h1
@@ -135,11 +152,6 @@ nav
             transform-origin: top
 
 
-
-
-    
-  
-
 .bar 
     background-color: white
     &.black-bar
@@ -164,3 +176,85 @@ nav
 
 .bar3.change 
     transform: rotate(45deg) translate(-4px, -10px)
+
+section
+    padding: 4rem 0
+
+    &#section-cards
+        .col-lg-4
+            padding: 1rem
+            
+            div
+                padding: 2.2rem 1rem
+                background: #F4F4F4
+                box-shadow: 2px 2px 10px rgba(0,0,0,.1)
+
+                img
+                    width: 3rem
+                    height: 3rem
+                    border-radius: 50%
+                    border: 2px solid white
+                h5
+                    margin: 2rem 0 .7rem 0
+                p
+                    font-size: .9rem
+                    margin-bottom: 2.5rem
+                a
+                    color: #000
+                    position: relative
+                    &:hover
+                        text-decoration: none
+                    &:hover i
+                        right: -1.6rem
+                        transition: all 200ms ease-in-out
+                i
+                    position: absolute
+                    right: -1.3rem
+                    top: 50%
+                    transform: translateY(-50%)
+
+    &#section-parallax-1
+        background-image: url('../img/parallax-1.jpg')
+        background-color: #777
+        background-blend-mode: multiply
+        background-repeat: no-repeat
+        background-size: cover
+        background-attachment: fixed
+        
+        h1
+            color: $blue
+            font-size: 3.2rem
+            margin-bottom: -.5rem
+        p.lead
+            text-transform: uppercase
+            margin-bottom: 3rem
+            font-size: 1.3rem
+        img
+            width: 100%
+            border-radius: 50%
+        h5
+            color: $blue
+            text-transform: uppercase
+            width: 80%
+            height: 2.4rem
+            overflow: hidden
+            line-height: 1
+            margin-bottom: 1rem
+        p
+            line-height: 1.2
+            font-size: .9rem
+            color: #fff
+                    
+    &#section-whyUs
+        h2
+            margin-bottom: 2.5rem
+            text-transform: uppercase
+            font-weight: 400
+            font-size: 1.7rem
+        i
+            font-size: 2.5rem
+            color: $blue
+            margin-bottom: .5rem
+        h5
+            color: $blue
+            margin-bottom: 1.2rem
