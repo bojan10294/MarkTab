@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap");
 html {
   scroll-behavior: smooth;
 }
@@ -14,7 +14,7 @@ nav {
   transition: 500ms ease;
 }
 nav.white-bg {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
 nav img {
@@ -181,7 +181,7 @@ nav button:active {
 }
 
 section {
-  padding: 4rem 0;
+  padding: 6rem 0;
 }
 section#section-cards .col-lg-4 {
   padding: 1rem;
@@ -271,6 +271,203 @@ section#section-whyUs i {
 section#section-whyUs h5 {
   color: #109FDA;
   margin-bottom: 1.2rem;
+}
+section#section-parallax-2 {
+  background-image: url("../img/parallax-2.jpg");
+  background-color: #777;
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+}
+section#section-parallax-2 .mini-container {
+  max-width: 650px;
+  margin: 0 auto;
+}
+section#section-parallax-2 .mini-container h1 {
+  margin-bottom: -0.3rem;
+}
+section#section-parallax-2 .mini-container h2 {
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: -1px;
+  font-size: 1.7rem;
+  margin-bottom: 1.8rem;
+}
+section#section-parallax-2 .mini-container p {
+  line-height: 1.4;
+  margin-bottom: 3.5rem;
+}
+section#section-parallax-2 .mini-container a {
+  color: white;
+  font-weight: 500;
+  border: 2px solid white;
+  padding: 0.7rem 3rem;
+  position: relative;
+  z-index: 1;
+  transition: color 50ms ease-in 100ms;
+}
+section#section-parallax-2 .mini-container a:hover {
+  text-decoration: none;
+  color: #000;
+}
+section#section-parallax-2 .mini-container a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 101%;
+  background: white;
+  z-index: -1;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 200ms ease-in;
+}
+section#section-parallax-2 .mini-container a:hover::after {
+  transform: scaleY(1);
+  transform-origin: top;
+}
+
+footer {
+  padding: 4rem 0;
+}
+footer h4 {
+  color: #109FDA;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+footer a {
+  text-transform: uppercase;
+  color: black;
+}
+footer a:hover {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+}
+footer .location {
+  text-transform: uppercase;
+}
+footer .location i {
+  color: #109FDA;
+  font-size: 1.3rem;
+  margin-right: 0.5rem;
+}
+footer .facebook {
+  margin-bottom: 1rem;
+}
+footer .facebook a {
+  display: table;
+  vertical-align: middle;
+  position: relative;
+  height: 46px;
+  background: #0c559c;
+  padding-left: 66px;
+  width: 80%;
+  text-decoration: none;
+  position: relative;
+  text-align: left;
+}
+footer .facebook a .f-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 46px;
+  background: #2a83d8;
+  text-align: center;
+  font-size: 26px;
+  color: #fff;
+}
+footer .facebook a .f-icon i {
+  line-height: 46px;
+}
+footer .facebook a .f-text {
+  line-height: 16px;
+  color: #fff;
+  display: table-cell;
+  font-size: 12px;
+  font-weight: 400;
+  vertical-align: middle;
+  position: relative;
+}
+footer .facebook a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 100%;
+  background-color: #2a83d8;
+  width: 0%;
+  top: 0;
+  left: 0;
+}
+footer .facebook:hover a::before {
+  animation: animacija 700ms ease-in forwards;
+}
+footer .instagram a {
+  display: table;
+  vertical-align: middle;
+  position: relative;
+  height: 46px;
+  background: #EC696B;
+  padding-left: 66px;
+  width: 80%;
+  text-decoration: none;
+  position: relative;
+  text-align: left;
+}
+footer .instagram a .i-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 46px;
+  background: #FFC079;
+  text-align: center;
+  font-size: 26px;
+  color: #fff;
+}
+footer .instagram a .i-icon i {
+  line-height: 46px;
+}
+footer .instagram a .i-text {
+  line-height: 16px;
+  color: #fff;
+  display: table-cell;
+  font-size: 12px;
+  font-weight: 400;
+  vertical-align: middle;
+  position: relative;
+}
+footer .instagram a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 100%;
+  background-color: #FFC079;
+  width: 0%;
+  top: 0;
+  left: 0;
+}
+footer .instagram:hover a::before {
+  animation: animacija 700ms ease-in forwards;
+}
+
+@keyframes animacija {
+  0% {
+    width: 0%;
+  }
+  60% {
+    width: 100%;
+  }
+  80% {
+    width: 92%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

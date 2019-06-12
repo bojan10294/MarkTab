@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap')
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap')
 
 @mixin bp-sm 
     @media only screen and (min-width: 576px) 
@@ -28,6 +28,34 @@
     @media only screen and (min-width: 1500px) 
         @content
     
+@mixin button
+    color: white
+    font-weight: 500
+    border: 2px solid white
+    padding: .7rem 3rem
+    position: relative
+    z-index: 1
+    transition: color 50ms ease-in 100ms //!important
+
+    &:hover
+        text-decoration: none
+        color: #000
+    &::after
+        content: ''
+        position: absolute
+        left: 0
+        top: 0
+        width: 100%
+        height: 101%
+        background: white
+        z-index: -1
+        transform: scaleY(0)
+        transform-origin: bottom
+        transition: transform 200ms ease-in
+    &:hover::after
+        transform: scaleY(1)
+        transform-origin: top
+  
 $blue: #109FDA
 
 html
@@ -40,7 +68,7 @@ nav
     background-color: transparent
     transition: 500ms ease
     &.white-bg
-        background-color: white
+        background-color: rgba(255,255,255,.9)
         box-shadow: 0 2px 3px rgba(0,0,0,.1)
     img
         height: 3rem
@@ -50,7 +78,6 @@ nav
         li
             text-align: center
             a
-                // text-transform: uppercase
                 font-size: .9rem
                 width: 5rem
                 text-align: center
@@ -124,32 +151,7 @@ nav
         @include bp-lg
             width: 40%
     a
-        color: white
-        font-weight: 500
-        border: 2px solid white
-        padding: .7rem 3rem
-        position: relative
-        z-index: 1
-        transition: color 50ms ease-in 100ms //!important
-
-        &:hover
-            text-decoration: none
-            color: #000
-        &::after
-            content: ''
-            position: absolute
-            left: 0
-            top: 0
-            width: 100%
-            height: 101%
-            background: white
-            z-index: -1
-            transform: scaleY(0)
-            transform-origin: bottom
-            transition: transform 200ms ease-in
-        &:hover::after
-            transform: scaleY(1)
-            transform-origin: top
+        @include button
 
 
 .bar 
@@ -178,7 +180,7 @@ nav
     transform: rotate(45deg) translate(-4px, -10px)
 
 section
-    padding: 4rem 0
+    padding: 6rem 0
 
     &#section-cards
         .col-lg-4
@@ -258,3 +260,161 @@ section
         h5
             color: $blue
             margin-bottom: 1.2rem
+
+    &#section-parallax-2
+        background-image: url('../img/parallax-2.jpg')
+        background-color: #777
+        background-blend-mode: multiply
+        background-repeat: no-repeat
+        background-size: cover
+        background-attachment: fixed
+        color: #fff
+
+        .mini-container
+            max-width: 650px
+            margin: 0 auto
+
+            h1
+                margin-bottom: -.3rem
+            h2
+                text-transform: uppercase
+                font-weight: 300
+                letter-spacing: -1px
+                font-size: 1.7rem
+                margin-bottom: 1.8rem
+            p
+                line-height: 1.4
+                margin-bottom: 3.5rem
+            a
+                @include button
+footer
+    padding: 4rem 0
+    h4
+        color: $blue
+        text-transform: uppercase
+        margin-bottom: 1.5rem
+    a
+        text-transform: uppercase
+        color: black
+        &:hover
+            color: black
+            text-decoration: none
+            font-weight: 500
+    .location
+        text-transform: uppercase
+        i
+            color: $blue
+            font-size: 1.3rem
+            margin-right: .5rem
+    .facebook 
+        margin-bottom: 1rem
+        a 
+            display: table
+            vertical-align: middle
+            position: relative
+            height: 46px
+            background: #0c559c
+            padding-left: 66px
+            width: 80%
+            text-decoration: none
+            position: relative
+            text-align: left
+    
+        a
+            .f-icon 
+                position: absolute
+                left: 0
+                top: 0
+                bottom: 0
+                width: 46px
+                background: #2a83d8
+                text-align: center
+                font-size: 26px
+                color: #fff
+
+                i
+                    line-height: 46px
+
+            .f-text
+                line-height: 16px
+                color: #fff
+                display: table-cell
+                font-size: 12px
+                font-weight: 400
+                vertical-align: middle
+                position: relative
+  
+            &::before
+                content: ""
+                position: absolute
+                display: block
+                height: 100%
+                background-color: #2a83d8
+                width: 0%
+                top: 0
+                left: 0
+
+        &:hover a::before
+            animation: animacija 700ms ease-in forwards
+    
+    .instagram 
+        a 
+            display: table
+            vertical-align: middle
+            position: relative
+            height: 46px
+            background: #EC696B
+            padding-left: 66px
+            width: 80%
+            text-decoration: none
+            position: relative
+            text-align: left
+    
+        a
+            .i-icon 
+                position: absolute
+                left: 0
+                top: 0
+                bottom: 0
+                width: 46px
+                background: #FFC079
+                text-align: center
+                font-size: 26px
+                color: #fff
+
+                i
+                    line-height: 46px
+
+            .i-text
+                line-height: 16px
+                color: #fff
+                display: table-cell
+                font-size: 12px
+                font-weight: 400
+                vertical-align: middle
+                position: relative
+  
+            &::before
+                content: ""
+                position: absolute
+                display: block
+                height: 100%
+                background-color: #FFC079
+                width: 0%
+                top: 0
+                left: 0
+
+        &:hover a::before
+            animation: animacija 700ms ease-in forwards
+
+@keyframes animacija
+    0%
+        width: 0%
+    60%
+        width: 100%
+    80%
+        width: 92%
+    100%
+        width: 100%
+
+
